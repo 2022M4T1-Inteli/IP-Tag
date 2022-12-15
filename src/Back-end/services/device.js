@@ -1,4 +1,3 @@
-const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const sqlite3 = require("sqlite3").verbose();
 const sqlite = require("sqlite");
@@ -40,13 +39,21 @@ class Device {
 
   async cadastroDevice(nome, mac_address) {
     const db = await this.db;
-    mac_address;
+
     const device = await db.get(
       `SELECT * \ FROM cadastro_device \ WHERE mac_address="${mac_address}"`
     );
 
     if (device) {
       throw new Error("Dispositivo já na fila de cadastro");
+    }
+
+    const deviceMainTable = await db.get(
+      `SELECT * \ FROM device \ WHERE mac_address="${mac_address}"`
+    );
+
+    if (deviceMainTable) {
+      throw new Error("Dispositivo já cadastrado");
     }
 
     const insertion = await db.run(
