@@ -41,6 +41,7 @@ function Logout() {
 }
 
 async function createNavbar() {
+  debugger
   await $.ajax({
     url: "http://localhost:3001/user/get",
     headers: { Authorization: ` ${auth}` },
@@ -51,10 +52,13 @@ async function createNavbar() {
       if (!user.img) {
         user.img = "../images/avatar.png";
       }
+      if(document.getElementById("nome")){        
+        document.getElementById("nome").innerHTML = user.nome + "!";
+      }
       // user.is_admin = false;
       if (user.is_admin == true) {
         GerenciarUsers =
-          '<a href="view-users.html" class="nav_link"><i class="bx bxs-user nav_icon"></i><span class="nav_name">Usuários</span></a>';
+          '<a href="view-users.html" class="nav_link" id"users"><i class="bx bxs-user nav_icon"></i><span class="nav_name">Usuários</span></a>';
           GerenciarDevices = "view-devices-adm.html";
       }else{
         GerenciarDevices = "view-devices.html";
@@ -83,16 +87,16 @@ async function createNavbar() {
                     <span class="nav-logo-name">IPTag</span>
                   </a>
                   <div class="nav_list">
-                    <a href="dashboard.html" class="nav_link active">
+                    <a href="dashboard.html" class="nav_link active" id="dashboard">
                       <i class='bx bx-grid-alt nav_icon'></i>
                       <span class="nav_name">Dashboard</span>
                     </a>
           
-                    <a href="notification.html" class="nav_link">
+                    <a href="notification.html" class="nav_link" id="notification">
                       <i class='bx bx-bell nav_icon'></i>
                       <span class="nav_name">Notificações</span>
                     </a>
-                    <a href="${GerenciarDevices}" class="nav_link">
+                    <a href="${GerenciarDevices}" class="nav_link" id="devices">
                       <i class='bx bx-search nav_icon'></i>
                       <span class="nav_name">Buscar</span>
                     </a>

@@ -1,16 +1,17 @@
 loadUsers();
-
+let Allusers;
 async function loadUsers() {
   await $.ajax({
     url: "http://localhost:3001/user/getUsers",
     headers: { Authorization: ` ${auth}` },
     success: function (resul) {
       users = resul.message;
+      Allusers = users;
+      listUsers(users);
     },
   }).fail(function (err) {
     console.log(err.responseJSON.message);
   });
-  listUsers(users);
 }
 
 async function listUsers(users) {
@@ -102,3 +103,33 @@ async function deleteUser(userDelete) {
     console.log(err.responseJSON.message);
   });
 }
+
+function searchInput(valToSearch) {
+  if (valToSearch == "") {
+    document.getElementById("list-users").innerHTML = "";
+    document.getElementById("pagination").innerHTML = "";
+    loadUsers();
+  } else {
+    document.getElementById("list-users").innerHTML = "";
+    Allusers = Allusers.filter((val) => {
+      return val.nome.toLowerCase().includes(valToSearch.toLowerCase());
+    });
+
+    if (Allusers) {
+      document.getElementById("pagination").innerHTML = "";
+
+      listUsers(Allusers);
+    } else {
+      document.getElementById("pagination").innerHTML = "";
+      document.getElementById("list-users").innerHTML =
+        "<h1> Não dispositivo encontrado</h1>";
+    }
+  }
+}
+
+function selectNavbar(){
+  document.getElementById("dashboard").classList.remove("active");
+  document.getElementById("users").classList.add("active");
+
+}
+selectNavbar();

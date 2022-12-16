@@ -1,23 +1,23 @@
-
 loadDevices();
+let Alldevices;
 
-async function loadDevices() {
-  await $.ajax({
+function loadDevices() {
+  $.ajax({
     url: "http://localhost:3001/device/getDevices",
-    headers: { "Authorization": ` ${auth}` },
+    headers: { Authorization: ` ${auth}` },
     success: function (resul) {
-      devices = resul.message
-    }
+      devices = resul.message;
+      listDevices(devices);
+      Alldevices = devices;
+    },
   }).fail(function (err) {
-    console.log(err.responseJSON.message)
-  })
-  console.log(devices)
-  listDevices(devices);
+    console.log(err.responseJSON.message);
+  });
 }
 
 async function listDevices(devices) {
   for (i = 0; i < devices.length; i++) {
-    document.getElementById('list-devices').innerHTML += `
+    document.getElementById("list-devices").innerHTML += `
     <div class="col-sm-12 col-md-6 col-lg-3 mt-4">
               <div class="white-card align-items-center">
                 <div class="d-flex">
@@ -25,10 +25,10 @@ async function listDevices(devices) {
                     <img class="white-card-img-device" src="../images/device.png" alt="Device">
                   </div>
                   <div class="row">
-                    <span class="white-card-name-device">${devices[i].nome}</span>
+                    <span class="white-card-name-device" id="">${devices[i].nome}</span>
                     <span class="white-card-nickname-device">${devices[i].apelido}</span>
                   </div>
-                  <div class="row">
+                  <div class="row" style="margin-left:auto;">
                     <div>
                       <div class="square-green"></div>
                     </div>
@@ -48,12 +48,33 @@ async function listDevices(devices) {
               </div>
             </div>
 
-`
+`;
   }
-
 }
 
-function viewDevice(deviceId){
+function viewDevice(deviceId) {
   window.location.href = `/view/view-device-adm.html?id=${deviceId}`;
-  
+}
+
+function searchInput(valToSearch) {
+  if (valToSearch == "") {
+    document.getElementById("list-devices").innerHTML = "";
+    document.getElementById("pagination").innerHTML = "";
+    loadDevices();
+  } else {
+    document.getElementById("list-devices").innerHTML = "";
+    Alldevices = Alldevices.filter((val) => {
+      return val.nome.toLowerCase().includes(valToSearch.toLowerCase());
+    });
+    
+    if (Alldevices) {
+    document.getElementById("pagination").innerHTML = "";
+
+      listDevices(Alldevices);
+    } else {
+    document.getElementById("pagination").innerHTML = "";
+      document.getElementById("list-devices").innerHTML =
+        "<h1> Não dispositivo encontrado</h1>";
+    }
+  }
 }

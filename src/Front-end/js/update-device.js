@@ -8,7 +8,7 @@ async function loadDevice(deviceId) {
     success: function (resul) {
       device = resul.message[0];
       console.log(device);
-      debugger
+      
       $("#nome").val(device.nome);
       $("#apelido").val(device.apelido);
       $("#data_instalação").val(device.dt_instalacao);
