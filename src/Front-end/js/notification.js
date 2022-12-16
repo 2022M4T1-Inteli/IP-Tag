@@ -1,5 +1,5 @@
 loadNotifications();
-async function loadNotifications() {  
+async function loadNotifications() {
   await $.ajax({
     url: "http://localhost:3001/device/getCadastro",
     headers: { Authorization: ` ${auth}` },
@@ -12,9 +12,9 @@ async function loadNotifications() {
   listNotification(devices);
 }
 async function listNotification(devices) {
-    console.log(devices);
-    for(i =0; i< devices.length ; i++){
-        document.getElementById("notifications").innerHTML += `
+  console.log(devices);
+  for (i = 0; i < devices.length; i++) {
+    document.getElementById("notifications").innerHTML += `
         <a href="register-device.html?id=${devices[i].id}" class="notification">
         <div class="content-notification mt-2 mb-2 align-items-center">
           <div class="row">
@@ -36,6 +36,9 @@ async function listNotification(devices) {
         </div>
       </a>
             `;
-    }
-  
+  }
+}
+function selectNavbar() {
+  document.getElementById("dashboard").classList.remove("active");
+  document.getElementById("notification").classList.add("active");
 }

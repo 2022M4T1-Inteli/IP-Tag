@@ -77,3 +77,8 @@ function searchInput(valToSearch) {
     }
   }
 }
+
+function selectNavbar() {
+  document.getElementById("dashboard").classList.remove("active");
+  document.getElementById("devices").classList.add("active");
+}

@@ -66,15 +66,20 @@ function searchInput(valToSearch) {
     Alldevices = Alldevices.filter((val) => {
       return val.nome.toLowerCase().includes(valToSearch.toLowerCase());
     });
-    
+
     if (Alldevices) {
-    document.getElementById("pagination").innerHTML = "";
+      document.getElementById("pagination").innerHTML = "";
 
       listDevices(Alldevices);
     } else {
-    document.getElementById("pagination").innerHTML = "";
+      document.getElementById("pagination").innerHTML = "";
       document.getElementById("list-devices").innerHTML =
         "<h1> Não dispositivo encontrado</h1>";
     }
   }
+}
+
+function selectNavbar() {
+  document.getElementById("dashboard").classList.remove("active");
+  document.getElementById("devices").classList.add("active");
 }

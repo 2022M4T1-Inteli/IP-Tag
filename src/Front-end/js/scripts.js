@@ -41,7 +41,6 @@ function Logout() {
 }
 
 async function createNavbar() {
-  debugger
   await $.ajax({
     url: "http://localhost:3001/user/get",
     headers: { Authorization: ` ${auth}` },
@@ -58,7 +57,7 @@ async function createNavbar() {
       // user.is_admin = false;
       if (user.is_admin == true) {
         GerenciarUsers =
-          '<a href="view-users.html" class="nav_link" id"users"><i class="bx bxs-user nav_icon"></i><span class="nav_name">Usuários</span></a>';
+          '<a href="view-users.html" class="nav_link" id="users"><i class="bx bxs-user nav_icon"></i><span class="nav_name">Usuários</span></a>';
           GerenciarDevices = "view-devices-adm.html";
       }else{
         GerenciarDevices = "view-devices.html";
