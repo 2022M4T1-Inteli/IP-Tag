@@ -132,4 +132,3 @@ function selectNavbar(){
   document.getElementById("users").classList.add("active");
 
 }
-selectNavbar();

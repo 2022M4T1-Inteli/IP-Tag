@@ -106,6 +106,7 @@ async function createNavbar() {
                 </div>
               </nav>
             </div>`).insertAfter("#body-pd");
+            selectNavbar();
     },
   }).fail(function (err) {
     document.getElementById("body-pd").innerHTML =

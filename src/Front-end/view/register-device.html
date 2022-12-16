@@ -1,159 +1,227 @@
 <!DOCTYPE html>
 <html id="html" lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registrar dispositivo | IPTag</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
 
-<head>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <title>Registrar dispositivo | IPTag</title>
-  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
-  <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
-  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+  </head>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/sidebar.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-
-
-</head>
-
-
-<body style="display: flex;" id="body-pd">
-
-  <!--Container Main start-->
-  <main class="contaner d-flex">
-    <div class="col-sm-12">
-      <div class="row mt-3">
-        <h3>Cadastrar dispositivo</h3>
-      </div>
-      <div class="row mt-4">
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-              <div class="white-card">
-                <div class="row justify-content-center">
-                  <img class="image-white-card" src="../images/device.png" alt="Image device">
-                </div>
-                <div class="row">
-                  <p class="white-card-title">Informações</p>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="form-group">
-                      <input type="text" class="white-card-input" id="nome" aria-describedby="nome"
-                        placeholder="Nome do dispositivo*">
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="form-group">
-                      <input type="text" class="white-card-input" id="apelido" aria-describedby="apelido"
-                        placeholder="Apelido*">
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="form-group">
-                      <input type="date" class="white-card-input" id="data_instalação" aria-describedby="data_instalação"
-                        placeholder="Data de instalação*">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="form-group">
-                      <input type="text" class="white-card-input" id="predio_origem" aria-describedby="nome"
-                        placeholder="Prédio de origem*">
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="form-group">
-                      <input type="text" class="white-card-input" id="sala_origem" aria-describedby="sala origem"
-                        placeholder="Sala de origem*">
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="form-group">
-                      <input type="text" class="white-card-input" id="setor" aria-describedby="setor"
-                        placeholder="Setor*">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                 
-                  <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="form-group">
-                      <input type="text" class="white-card-input" id="responsavel" aria-describedby="responsavel responsavel" placeholder="Responsável*">
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-md-6 col-lg-4">
-
-                    <select type="text" class="white-card-input" id="tipo">
-                      <option selected disabled>Tipo*</option>
-                      <option value="Acess point">Acess point</option>
-                      <option value="Locator">Locator</option>
-
-                    </select>
-                  </div>
-                </div>
-                <div class="row justify-content-center mt-2">
-                  <div class="col-12">
-                      <div id="error">
-
-                      </div>
-                  </div>
-              </div>
-                <div class="row mt-4"><div class="col-sm-12" id="erros"></div></div>
-                <div class="row mt-4">
-                  <div class="col-sm-12 ">
-                    <div class="row justify-content-center">
-                      <div class="col-sm-12 col-md-6 col-lg-3">
-                        <button class="btn-white-blue"><i class="fa fa-arrow-left" aria-hidden="true"></i>
-                          Voltar</button>
-                      </div>
-                      <div class="col-sm-12 col-md-6 col-lg-3">
-                        <button class="btn-blue" onclick="saveDispositivo()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
+  <body style="display: flex" id="body-pd">
+    <!--Container Main start-->
+    <main class="contaner d-flex">
+      <div class="col-sm-12">
+        <div class="row mt-3">
+          <h3>Cadastrar dispositivo</h3>
         </div>
+        <div class="row mt-4">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="white-card">
+                  <div class="row justify-content-center">
+                    <img
+                      class="image-white-card"
+                      src="../images/device.png"
+                      alt="Image device"
+                    />
+                  </div>
+                  <div class="row">
+                    <p class="white-card-title">Informações</p>
+                  </div>
 
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="white-card-input"
+                          id="nome"
+                          aria-describedby="nome"
+                          placeholder="Nome do dispositivo*"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="white-card-input"
+                          id="apelido"
+                          aria-describedby="apelido"
+                          placeholder="Apelido*"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <input
+                          type="date"
+                          class="white-card-input"
+                          id="data_instalação"
+                          aria-describedby="data_instalação"
+                          placeholder="Data de instalação*"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="white-card-input"
+                          id="predio_origem"
+                          aria-describedby="nome"
+                          placeholder="Prédio de origem*"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="white-card-input"
+                          id="sala_origem"
+                          aria-describedby="sala origem"
+                          placeholder="Sala de origem*"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="white-card-input"
+                          id="setor"
+                          aria-describedby="setor"
+                          placeholder="Setor*"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="white-card-input"
+                          id="responsavel"
+                          aria-describedby="responsavel responsavel"
+                          placeholder="Responsável*"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                      <select type="text" class="white-card-input" id="tipo">
+                        <option selected disabled>Tipo*</option>
+                        <option value="Acess point">Acess point</option>
+                        <option value="Locator">Locator</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row justify-content-center mt-2">
+                    <div class="col-12">
+                      <div id="error"></div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col-sm-12" id="erros"></div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="col-sm-12">
+                      <div class="row justify-content-center">
+                        <div class="col-sm-12 col-md-6 col-lg-3">
+                          <button class="btn-white-blue">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            Voltar
+                          </button>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-3">
+                          <button class="btn-blue" onclick="saveDispositivo()">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            Salvar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </main>
-  <!--Container Main end-->
+    </main>
+    <!--Container Main end-->
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-</body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script type='text/javascript'
-  src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
-<script type='text/javascript' src='../js/scripts.js'></script>
-<script type='text/javascript' src='../js/register-device.js'></script>
-
+  <script type="text/javascript" src="../js/scripts.js"></script>
+  <script type="text/javascript" src="../js/register-device.js"></script>
 </html>
