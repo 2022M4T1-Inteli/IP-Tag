@@ -1,11 +1,15 @@
+// Importando os modules necessários
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 const sqlite3 = require("sqlite3").verbose();
 const sqlite = require("sqlite");
 
+// Função que verifica se o token passado no headers da request é valido no sistema
 const verifyToken = async (req, res, next) => {
+  // Pegando o token enviado no headres da request
   const token = req.headers.authorization;
 
+  // Response da request caso o token não tenha sido passado
   if (!token) {
     return res.status(403).send("A token is required for authentication");
   }
@@ -18,9 +22,12 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
+// Função que verifica se o id do usuário, que esta fazendo a resquest, possui no banco de dados a permissão de administrador do sistema
 const verifyAdmin = async (req, res, next) => {
+  // Pegando o token enviado no headres da request
   const token = req.headers.authorization;
 
+  // Response da request caso o token não tenha sido passado
   if (!token) {
     return res.status(403).send("A token is required for authentication");
   }
@@ -45,9 +52,12 @@ const verifyAdmin = async (req, res, next) => {
   }
 };
 
+// Função que verifica se o token de dispositivo passado no headers da request é valido 
 const verifyDevice = async (req, res, next) => {
+  // Pegando o token enviado no headres da request
   const token = req.headers.authorization;
 
+  // Response da request caso o token não tenha sido passado
   if (!token) {
     return res.status(403).send("A token is required for authentication");
   }
