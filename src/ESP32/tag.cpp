@@ -21,14 +21,23 @@ int BROKER_PORT = 8883; // Porta do Broker MQTT
 
 WiFiClientSecure wifiClient;
 
-#define ID_MQTT  "BCI02"             //Informe um ID unico e seu. Caso sejam usados IDs repetidos a ultima conexão irá sobrepor a anterior.
-#define TOPIC_SUBSCRIBE "BUZZER"   //Informe um Tópico único. Caso sejam usados tópicos em duplicidade, o último irá eliminar o anterior.
+#define ID_MQTT  "BCI02"
+#define TOPIC_SUBSCRIBE "BUZZER"
 PubSubClient MQTT(wifiClient);        // Instancia o Cliente MQTT passando o objeto espClient
 
 void mantemConexoes(); 
 void conectaWiFi();
 void conectaMQTT();
-void recebePacote(char * topic, byte * payload, unsigned int length); 
+void recebePacote(char * topic, byte * payload, unsigned int length);
+
+void battery(){
+   int value = analogRead(1);
+   float voltage = value*(5.00/1023.00)*2;
+   Serial.print("Nivel:");
+   Serial.print(voltage);
+   Serial.print("%");
+   Serial.print("");
+ }
 
 void setup() {
   WiFi.mode(WIFI_STA);
@@ -53,15 +62,15 @@ void setup() {
   else {
     Serial.println("connected :)");
     digitalWrite(led, HIGH);
-    WiFi.softAP("Loc-1209", "$Inteli12345", 1);
+    WiFi.softAP("IPTAG", "$Inteli12345", 1);
     delay(500);
 
-    http.begin("http://192.168.191.228:3001/device/cadastro"); 
+    http.begin("https://iptag.herokuapp.com/device/cadastro"); 
     http.addHeader("Content-type", "application/json");
     http.addHeader("authorization", "eyJhbGciOiJIUzI1NiJ9.eyJJc3N1ZXIiOiJEZXZpY2UifQ.OSqUyuk6fst9MoU7-5iO6mMQ98YTQXUu7tX3noVhSqo");
     
     StaticJsonDocument<200> doc; 
-    doc["nome"] = "ESP pré-cadastrado"; 
+    doc["nome"] = "TAG PRÉ-CADASTRADA";
     doc["mac_address"] = WiFi.macAddress(); 
 
     JsonArray data = doc.createNestedArray("data");

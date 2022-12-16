@@ -52,9 +52,24 @@ void setup() {
   } else {
     Serial.println("connected :)");
     digitalWrite(led, HIGH);
-    http.begin("http://192.168.38.228:3001/device/move");
+    http.begin("https://iptag.herokuapp.com/device/move");
     http.addHeader("Content-Type", "application/json");
     http.addHeader("authorization", "eyJhbGciOiJIUzI1NiJ9.eyJJc3N1ZXIiOiJEZXZpY2UifQ.OSqUyuk6fst9MoU7-5iO6mMQ98YTQXUu7tX3noVhSqo");
+    
+    
+    http.begin("https://iptag.herokuapp.com/device/cadastro");
+    http.addHeader("Content-type", "application/json");
+    http.addHeader("authorization", "eyJhbGciOiJIUzI1NiJ9.eyJJc3N1ZXIiOiJEZXZpY2UifQ.OSqUyuk6fst9MoU7-5iO6mMQ98YTQXUu7tX3noVhSqo");
+    
+    StaticJsonDocument<200> doc;
+    doc["nome"] = "SALA PRÉ-CADASTRADA";
+    doc["mac_address"] = WiFi.macAddress();
+
+    JsonArray data = doc.createNestedArray("data");
+    String requestBody;
+    serializeJson(doc, requestBody);
+    int httpResponseCode = http.POST(requestBody);
+    Serial.println(httpResponseCode);
   }
 }
 
@@ -78,7 +93,7 @@ void loop() {
       char ssidIniti[ssidInitials.length() + 1]; 
 
       strcpy(ssidIniti, ssidInitials.c_str()); 
-      if (WiFi.SSID(i) == "Loc-1209") {
+      if (WiFi.SSID(i) == "IPTAG") {
         Serial.println("Achei!");
         Serial.println(WiFi.RSSI(i));
         if (WiFi.RSSI(i) >= (-30)) {
