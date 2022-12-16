@@ -3,17 +3,17 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
   var data = google.visualization.arrayToDataTable([
-    ["Year", "Sales", "Expenses"],
-    ["2004", 1000, 400],
-    ["2005", 1170, 460],
-    ["2006", 660, 1120],
-    ["2007", 1030, 540],
+    ["Dias", "Rastreios"],
+    ["Outubro", 111],
+    ["Novembro", 120],
+    ["Dezembro", 100],
   ]);
 
   var options = {
-    title: "Company Performance",
     curveType: "function",
     legend: { position: "bottom" },
+    width:500,
+    heigh:500,
   };
 
   var chart = new google.visualization.LineChart(
@@ -50,12 +50,6 @@ function createGraphics(devices) {
     } else {
       totalOff += 1;
     }
-    if (devices[i].dt_instalacao) {
-      const timeElapsed = Date.now();
-      const today = new Date(timeElapsed);
-      today.toLocaleDateString();
-      console.log(today);
-    }
   }
   totalPorcentagemOn = (100 / devices.length) * totalPorcentagemOn;
   $("#total-porcentagem").html("100%");
@@ -68,5 +62,5 @@ function createGraphics(devices) {
   $("#defeitos").html(totalOff);
 }
 function selectNavbar() {
-  document.getElementById("dashboard").classList.add("active");;
+  document.getElementById("dashboard").classList.add("active");
 }
