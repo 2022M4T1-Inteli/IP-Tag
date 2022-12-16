@@ -5,11 +5,11 @@ const sqlite = require("sqlite");
 const mqtt = require("mqtt");
 // Objeto contendo as informações necessárias para a conexão com o MQTT
 const options = {
-  host: "602ff603e70c4e1b9a8888b7ee2c2402.s1.eu.hivemq.cloud",
+  host: process.env.HOST,
   port: 8883,
   protocol: "mqtts",
-  username: "gabcarneiro",
-  password: "MR.mZ_Y8v46xxJE",
+  username: process.env.USERNAME,
+  password: process.env.PASSWORD,
 };
 
 // Classe Device que contém todos os métodos que um dispositivo deve ter em nosso sistema
