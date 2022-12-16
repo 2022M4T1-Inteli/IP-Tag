@@ -38,8 +38,6 @@ async function listUsers(users) {
         <div class="row justify-content-between align-items-center mt-4">
           <span class="white-card-time-device">2 min atrás</span>
           <div class="d-flex align-items-center w-max">
-            <a class="white-card-see-device" onclick="viewUser(${users[i].id})">Ver mais</a>
-            <img class="white-card-see-arrow-device" src="../images/arrow-right.png" alt="Ver mais">
             <a onclick="deleteUserModal(${users[i].id})" class="trash"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
           </div>
         </div>

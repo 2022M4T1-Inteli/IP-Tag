@@ -24,6 +24,7 @@ function verifyCreate() {
     $.ajax({
       url: "http://localhost:3001/user/create",
       type: "POST",
+      headers: { Authorization: ` ${auth}` },
       data: {
         nome: $("#nome").val(),
         setor: $("#setor").val(),
@@ -33,10 +34,10 @@ function verifyCreate() {
       },
       success: async function (resul) {
         console.log(resul.message);
+        window.location.href = "/view/view-users.html";
       },
       error: function (err) {
-        window.location.href = "/view/register-user.html";
-        console.log(msg);
+        console.log(err);
       },
     });
   } else {
@@ -52,3 +53,14 @@ function selectNavbar() {
   document.getElementById("dashboard").classList.remove("active");
   document.getElementById("users").classList.add("active");
 }
+activateSenha = false;
+$("#see").click(function () {
+  activateSenha = !activateSenha;
+  if (activateSenha == true) {
+    $("#senha").attr("type", "text");
+    $("#see").removeClass("fa fa-eye").addClass("fa fa-eye-slash");
+  } else {
+    $("#senha").attr("type", "password");
+    $("#see").removeClass("fa fa-eye-slash").addClass("fa fa-eye");
+  }
+});

@@ -67,3 +67,6 @@ function createGraphics(devices) {
   $("#bateria").html(totalOff);
   $("#defeitos").html(totalOff);
 }
+function selectNavbar() {
+  document.getElementById("dashboard").classList.add("active");;
+}
