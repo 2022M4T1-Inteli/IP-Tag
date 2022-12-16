@@ -218,8 +218,6 @@ const moveDevice = (req, res) => {
   // Pegando as informações passadas no body da request
   const { mac_address_router, mac_address_moved } = req.body;
 
-  console.log(req.body);
-
   // Verificando se todos os body obrigatórios foram enviados
   const errors = validationResult(req);
   // Response caso não seja enviado as informações obrigatórias

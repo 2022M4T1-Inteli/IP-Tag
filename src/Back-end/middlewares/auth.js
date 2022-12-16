@@ -52,7 +52,7 @@ const verifyAdmin = async (req, res, next) => {
   }
 };
 
-// Função que verifica se o token de dispositivo passado no headers da request é valido 
+// Função que verifica se o token de dispositivo passado no headers da request é valido
 const verifyDevice = async (req, res, next) => {
   // Pegando o token enviado no headres da request
   const token = req.headers.authorization;
@@ -62,13 +62,10 @@ const verifyDevice = async (req, res, next) => {
     return res.status(403).send("A token is required for authentication");
   }
   try {
-    if (jwt.verify(token, process.env.JWT_DEVICE)) {
-      return next();
-    }
-
-    throw new Error("Dispositivo sem permissão");
+    await jwt.verify(token, process.env.JWT_DEVICE);
+    return next();
   } catch (err) {
-    console.log(err);
+    console.log(err.message);
     return res.status(401).send("Invalid Token");
   }
 };

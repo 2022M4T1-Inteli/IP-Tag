@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 deviceId = params.get("id");
 
-function saveDispositivo() {
+async function saveDispositivo() {
   document.getElementById("body-pd").style.display = "none";
   document
     .getElementById("body-pd")
@@ -47,47 +47,47 @@ function saveDispositivo() {
       erros.push(campos_nomenclatura[i]);
     }
   }
-  if (!erros.length) {
-    $.ajax({
-      url: "http://localhost:3001/device/create",
-      type: "POST",
-      headers: { Authorization: ` ${auth}` },
-      data: {
-        id_cadastro: deviceId,
-        nome: $("#nome").val(),
-        apelido: $("#apelido").val(),
-        dt_instalacao: $("#data_instalação").val(),
-        origem_predio: $("#predio_origem").val(),
-        origem_sala: $("#sala_origem").val(),
-        setor_origem: $("#setor").val(),
-        responsavel: $("#responsavel").val(),
-        tipo: $("#tipo").val(),
-      },
-      success: async function (resul) {
-        console.log(resul.message);
-        window.location.href = '/view/view-devices-adm.html';
-      },
-      error: function (err) {
-        console.log(err);
-        $("#error").html(
-          `<div class="alert alert-danger" role="alert">${err.responseJSON.error}</div>`
-        );
-      },
-    });
-  } else {
-    var error = "Campo ";
-    for (i = 0; i < erros.length; i++) {
-      if (erros.length != 0) {
-        error = error + erros[i] + ", ";
-      }
-    }
-    document.getElementById("erros").innerHTML = "";
-    document.getElementById(
-      "erros"
-    ).innerHTML += `<div class="alert alert-danger" role="alert">
-         ${error} estão vazio!
-      </div>`;
-  }
+  // if (!erros.length) {
+  await $.ajax({
+    url: "http://localhost:3001/device/create",
+    type: "POST",
+    headers: { Authorization: ` ${auth}` },
+    data: {
+      id_cadastro: deviceId,
+      nome: $("#nome").val(),
+      apelido: $("#apelido").val(),
+      dt_instalacao: $("#data_instalação").val(),
+      origem_predio: $("#predio_origem").val(),
+      origem_sala: $("#sala_origem").val(),
+      setor_origem: $("#setor").val(),
+      responsavel: $("#responsavel").val(),
+      tipo: $("#tipo").val(),
+    },
+    success: async function (resul) {
+      console.log(resul.message);
+      window.location.href = "/view/view-devices-adm.html";
+    },
+    error: function (err) {
+      console.log(err);
+      $("#error").html(
+        `<div class="alert alert-danger" role="alert">${err.responseJSON.error}</div>`
+      );
+    },
+  });
+  // } else {
+  //   var error = "Campo ";
+  //   for (i = 0; i < erros.length; i++) {
+  //     if (erros.length != 0) {
+  //       error = error + erros[i] + ", ";
+  //     }
+  //   }
+  //   document.getElementById("erros").innerHTML = "";
+  //   document.getElementById(
+  //     "erros"
+  //   ).innerHTML += `<div class="alert alert-danger" role="alert">
+  //        ${error} estão vazio!
+  //     </div>`;
+  // }
 }
 function selectNavbar() {
   document.getElementById("dashboard").classList.remove("active");

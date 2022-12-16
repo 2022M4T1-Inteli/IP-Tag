@@ -387,6 +387,9 @@ class Device {
     // Realizando a conexão com o banco de dados
     const db = await this.db;
 
+    // Trocando as primeiras letras da string de F6 para F4 para que ocorra a localização correta do dispositivo em nosso banco de dados
+    mac_address_moved = mac_address_moved.replace(/^.{2}/g, "F4");
+
     // Checando se os dispositivos que estão envolvidos la mudança existem no sistema, caso contrário geram um erro
     const routerDevice = await db.get(
       `SELECT * \ FROM device \ WHERE mac_address = "${mac_address_router}"`
