@@ -4,10 +4,12 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# IP Tag 
+# Localizador indoor
+
+## IPTag
 
 ## Integrantes:  
-<a href="https://linklist.bio/Grupo_1_Turma_1_Ip_Tag">Antônio Ribeiro Cavalcante</a>
+- <a href="https://linklist.bio/Grupo_1_Turma_1_Ip_Tag">Antônio Ribeiro Cavalcante</a>
 - <a href="https://linklist.bio/Grupo_1_Turma_1_Ip_Tag">Felipe Pereira Campos</a>
 - <a href="https://linklist.bio/Grupo_1_Turma_1_Ip_Tag">Gabriel Elias Carneiro</a>
 - <a href="https://linklist.bio/Grupo_1_Turma_1_Ip_Tag">Gustavo Ferreira de oliveira</a>
@@ -15,68 +17,38 @@
 - <a href="https://linklist.bio/Grupo_1_Turma_1_Ip_Tag">Luiz Felipe  Kama Alencar</a>
 
 
-## Descrição
-Pelo fato do IPT ser uma instituição pública, ela é submetida a diversas auditorias, é necessário que o auditor veja o equipamento in loco. Encontrar esses equipamentos dentro de um campus, muitas vezes se torna uma tarefa difícil, por isso o IPT necessita de uma solução que localize estes equipamentos de maneira fácil e eficaz.
+## 📝 Descrição
 
-Para solucionar esse problema, planejamos a criação de um equipamento que informa a localização da máquina a ser procurada dentro da rede do campus. Estas informações são dispostas através de uma plataforma que o usuário poderá utilizar para procurar por equipamentos e encontrá-los, além de ser notificado caso alguma máquina se desconecte ou saia do campus.
+Pelo fato do IPT ser uma instituição pública, ele é submetido a diversas auditorias. Nesse caso, é necessário que o auditor veja o equipamento in loco. Encontrar esses equipamentos dentro de um campus, muitas vezes se torna uma tarefa difícil, por isso o IPT necessita de uma solução que localize estes equipamentos de maneira fácil e eficaz. Para solucionar esse problema, planejamos a criação de um equipamento que informa a localização da máquina a ser procurada dentro da rede do campus. Estas informações são dispostas através de uma plataforma que o usuário poderá utilizar para procurar por equipamentos e encontrá-los, além de ser notificado caso alguma máquina se desconecte ou saia do campus.
 
-## 🛠 Estrutura de pastas
-
--Projeto1<br>
-|<a href="https://github.com/2022M4T1-Inteli/Projeto1">
-📂.GitHub</a><br>
-
- |<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/documentos">
-📂.documentos</a><br>
-        &emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/blob/main/documentos/IoTDoc%20M%C3%B3dulo%204%20-%20v3.pdf">
-        📃.IoTDoc Módulo 4 - v3.pdf</a><br>
-        &emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/blob/main/documentos/Manual%20de%20Instru%C3%A7%C3%B5es%20M%C3%B3dulo%204%20-%20v1.pdf">
-        📃.Manual de Instruções Módulo 4 - v1.pdf</a><br>
-
-|<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/src">
-📂.src</a><br>
-    &emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/src/Back-end">
-    📂.Back-end</a><br>
-            &emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/src/Back-end/ESP32">
-            📂.ESP32</a><br>
-                &emsp;&emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/src/Back-end/ESP32/c%C3%B3digo-funcionando">
-                📃.código-funcionando</a><br>
-    &emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/src/Front-end">
-    📂.Front-end</a><br>
-            &emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/src/Front-end/css">
-            💻.css</a><br>
-            &emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/src/Front-end/fonts">
-            💻.fonts</a><br>
-            &emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/src/Front-end/images">
-            📷.images</a><br>
-            &emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/src/Front-end/js">
-            💻.js</a><br>
-            &emsp;|<a href="https://github.com/2022M4T1-Inteli/Projeto1/tree/main/src/Front-end/view">
-            📷.view</a><br>
-
-|<a href="https://github.com/2022M4T1-Inteli/Projeto1/blob/main/.gitignore">
-⚙️.gitignore</a><br>
-
-|<a href="https://github.com/2022M4T1-Inteli/Projeto1/blob/main/README.md">
-🌐.README.md</a><br>
+## 📁 Estrutura de pastas
 
 
+|--> documentos<br>
+  &emsp;| --> outros <br>
+  &emsp;| T1_G1_V1_Instruction_Manual.pdf<br>
+  &emsp;| T1_G1_V3_IoT_Document.pdf<br>
+|--> src<br>
+  &emsp;|--> Backend<br>
+  &emsp;|--> Circuito<br>
+  &emsp;|--> Frontend<br>
+| readme.md<br>
 
-            
+Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
-Dentre os arquivos presentes na raiz do projeto, definem-se:
+- <b>readme.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
-**readme.md**: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
+- <b>documentos</b>: aqui estão todos os documentos do projeto, incluindo o manual de instruções. Há também uma pasta denominada <b>outros</b> onde estão presentes outros documentos complementares.
 
-**.gitignore**: arquivo que faz com que o github ignore o que não precisa.
+- <b>src</b>: todo o código fonte criado para o desenvolvimento do projeto, incluindo os blocos de código do circuito, backend e frontend se aplicáveis.
 
-**documentos**: aqui estarão todos os documentos do projeto. Há também uma pasta denominada outros onde estão presentes aqueles documentos complementares ao web application document.
+## 💻 Execução do projeto
 
-**src**: nesta pasta encontra-se todo o código fonte do sistema (existem quatro subpastas duas delas sendo backend e frontend que contêm, respectivamente, o código do servidor e o código da página web e as outras duas sendo de arquivos do para uso das ide´s).
+Um guia para a execução desse projeto pode ser encontrado no conteúdo do documento "Manual de Instruções", dentro da pasta "documentos".
 
-## 💻 Configuração para Desenvolvimento
+Se preferir, também é possível acessá-lo a partir do seguinte link:
 
-Se aplicável, descreva instruções para configuração do ambiente para desenvolvimento (frontend e/ou backend)
+https://github.com/2022M4T1-Inteli/IP-Tag/blob/main/documentos/T1_G1_V1_Instruction_Manual.pdf
 
 
 ## 🗃 Histórico de lançamentos
@@ -115,7 +87,14 @@ Se aplicável, descreva instruções para configuração do ambiente para desenv
 
 ## 📋 Licença/License
 
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/2022M4T1-Inteli/Projeto1">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://linklist.bio/Grupo_1_Turma_1_Ip_Tag">Antônio Ribeiro Cavalcante, Gabriel Elias Carneiro, Gustavo Ferreira de oliveira, Henrique Lemos Freire Matias, Luiz Felipe  Kama Alencar</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International<img style="<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este obra está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Atribuição 4.0 Internacional</a>."><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></p>
+
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1">
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1">
+
+
+
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="#">IPTag</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://linklist.bio/Grupo_1_Turma_1_Ip_Tag">Inteli, Antônio Ribeiro Cavalcante, Gabriel Elias Carneiro, Gustavo Ferreira de oliveira, Henrique Lemos Freire Matias, Luiz Felipe  Kama Alencar</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
+
 
 ## 🎓 Referências
 
